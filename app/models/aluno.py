@@ -10,4 +10,5 @@ class Aluno(Base):
     email: Mapped[str] = mapped_column(String(255), unique=True)
     username: Mapped[str] = mapped_column(String(100), unique=True)
     senha_hash: Mapped[str] = mapped_column(String(255))
+    nivel_autorizacao: Mapped[str] = mapped_column(String(50))
     
