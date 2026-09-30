@@ -5,6 +5,6 @@ from app.database.base import Base
 class Teste_Questao(Base):
     __tablename__ = "teste_questao"
     
-    idTeste: Mapped[int] = mapped_column(ForeignKey("teste.id"), primary_key=True)
-    idQuestao: Mapped[int] = mapped_column(ForeignKey("questao.id"), primary_key=True)
+    id_teste: Mapped[int] = mapped_column(ForeignKey("teste.id"), primary_key=True)
+    id_questao: Mapped[int] = mapped_column(ForeignKey("questao.id"), primary_key=True)
     

@@ -5,6 +5,6 @@ from app.database.base import Base
 class Rotina_Materia(Base):
     __tablename__ = "rotina_materia"
     
-    idMateria: Mapped[int] = mapped_column(ForeignKey("materia.id"), primary_key=True)
-    idRotina: Mapped[int] = mapped_column(ForeignKey("rotina.id"), primary_key=True)
+    id_materia: Mapped[int] = mapped_column(ForeignKey("materia.id"), primary_key=True)
+    id_rotina: Mapped[int] = mapped_column(ForeignKey("rotina.id"), primary_key=True)
     

@@ -20,11 +20,11 @@ class MaterialEnsino(Base):
     tipo: Mapped[str] = mapped_column(String(50))
     url: Mapped[str] = mapped_column(String(2048))
 
-    idConteudo: Mapped[int] = mapped_column(
+    id_conteudo: Mapped[int] = mapped_column(
         ForeignKey("conteudo.id")
     )
 
-    idAluno: Mapped[int] = mapped_column(
+    id_aluno: Mapped[int] = mapped_column(
         ForeignKey("aluno.id")
     )
 
@@ -33,4 +33,4 @@ class MaterialEnsino(Base):
         default=StatusMaterial.PENDENTE
     )
 
-    criadoEm: Mapped[datetime] = mapped_column()
+    criado_em: Mapped[datetime] = mapped_column()

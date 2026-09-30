@@ -10,5 +10,5 @@ class Rotina(Base):
     dia: Mapped[date] = mapped_column(Date)
     horario: Mapped[time] = mapped_column(Time)
     duracao: Mapped[timedelta] = mapped_column(Interval)     
-    idAluno: Mapped[int] = mapped_column(ForeignKey("aluno.id"))
+    id_aluno: Mapped[int] = mapped_column(ForeignKey("aluno.id"))
     

@@ -8,5 +8,5 @@ class Conteudo(Base):
     
     id:Mapped[int] = mapped_column(primary_key=True)
     descricao:Mapped[str] = mapped_column(String(100))
-    idMateria: Mapped[int] = mapped_column(ForeignKey("materia.id"))
+    id_materia: Mapped[int] = mapped_column(ForeignKey("materia.id"))
     

@@ -11,4 +11,4 @@ class teste(Base):
     dt_realizacao: Mapped[date] = mapped_column(Date)
     nota: Mapped[float] = mapped_column(Float)
     tipo: Mapped[str] = mapped_column(String(30))
-    idAluno: Mapped[int] = mapped_column(ForeignKey("aluno.id"))
+    id_aluno: Mapped[int] = mapped_column(ForeignKey("aluno.id"))

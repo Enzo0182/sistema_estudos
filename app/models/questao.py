@@ -12,4 +12,4 @@ class questao(Base):
     alternativa_c: Mapped[str] = mapped_column(String(250))
     alternativa_d: Mapped[str] = mapped_column(String(250))
     gabarito: Mapped[str] = mapped_column(String(20))
-    idConteudo: Mapped[int] = mapped_column(ForeignKey("conteudo.id"))
+    id_conteudo: Mapped[int] = mapped_column(ForeignKey("conteudo.id"))
