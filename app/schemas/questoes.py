@@ -20,7 +20,7 @@ class QuestaoResponse(BaseModel):
     alternativa_c:str | None
     alternativa_d:str | None
     gabarito: str | None
-    idConteudo : int
+    id_conteudo : int
     model_config = {
         "from_attributes": True
     }

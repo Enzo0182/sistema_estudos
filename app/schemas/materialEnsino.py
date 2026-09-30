@@ -7,7 +7,7 @@ class MaterialCreate(BaseModel):
     titulo: str = Field(min_length=10, max_length=200)
     tipo: str = Field(min_length=3, max_length=50)
     url: str = Field(max_length=2048)
-    idConteudo: int
+    id_conteudo: int
 
 class MaterialResponse(BaseModel):
     id: int
@@ -15,9 +15,9 @@ class MaterialResponse(BaseModel):
     descricao: str
     tipo: str
     url: str
-    idConteudo: int
-    idAluno:int
-    criadoEm: datetime
+    id_conteudo: int
+    id_aluno:int
+    criado_em: datetime
     status: str
     model_config = {
         'from_attributes': True

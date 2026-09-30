@@ -11,7 +11,7 @@ class TesteCreate(BaseModel):
     dt_realizacao : date
     nota : float
     tipo : str = Field(min_length=3, max_length=30)
-    idQuestoes : list[int]
+    id_questoes : list[int]
     
 class TesteResponse(BaseModel):
     id : int
@@ -19,7 +19,7 @@ class TesteResponse(BaseModel):
     dt_realizacao : date
     nota : float
     tipo : str
-    idQuestoes : list[int]
+    id_questoes : list[int]
     model_config={
         'from_attributes' : True
     }
@@ -29,5 +29,5 @@ class TesteUpdate(BaseModel):
     dt_realizacao : date | None = None
     nota : float | None = None
     tipo : str | None = None
-    idQuestoes : list[int] | None = None
-    tipoAlteracao : TipoAlteracao | None = None
+    id_questoes : list[int] | None = None
+    tipo_alteracao : TipoAlteracao | None = None
