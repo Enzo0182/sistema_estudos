@@ -22,4 +22,8 @@ def login(
     session: Session = Depends(get_session)
 ):
     return logar_aluno(dados, session)
+
+@router.post("/logout")
+def logout():
+    pass
         

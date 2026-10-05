@@ -61,5 +61,20 @@ def atualizar_dados_aluno(id_aluno: int, dados: AlunoUpdate, session: Session):
         session.rollback()
         return False
 
-        
+def deletar_aluno(id_aluno: int, dados: AlunoDelete, session: Session):
+    aluno = session.get(Aluno, id_aluno)
+    if aluno is not None:
+        senha = dados.senha_atual
+    else:
+        return False
+    if verificar_senha(senha, aluno.senha_hash):
+        try:
+            session.delete(aluno)
+            session.commit()
+            return True
+        except Exception:
+            session.rollback()
+            return False
+    else:
+        return False
     
