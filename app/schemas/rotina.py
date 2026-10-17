@@ -7,6 +7,7 @@ class RotinaCreate(BaseModel):
     horario: time
     duracao: timedelta
     id_materias: list[int]
+    id_aluno: int
     
 class RotinaResponse(BaseModel):
     id: int
@@ -22,4 +23,6 @@ class RotinaUpdate(BaseModel):
     dia: date | None = None
     horario: time | None = None
     duracao: timedelta | None = None
-    id_materia: list[int] | None = None
+    id_materias: list[int] | None = None
+    tipo_operacao: str | None = None
+
