@@ -2,7 +2,9 @@ from datetime import datetime
 from enum import Enum
 from app.database.base import Base
 from sqlalchemy import Enum as SQLEnum, ForeignKey, String
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from app.models.conteudo  import Conteudo
+from app.models.aluno import Aluno
 
 
 class StatusMaterial(Enum):
@@ -34,3 +36,6 @@ class MaterialEnsino(Base):
     )
 
     criado_em: Mapped[datetime] = mapped_column()
+    conteudo: Mapped["Conteudo"] = relationship(
+        back_populates= "materiais"
+    )
