@@ -3,6 +3,7 @@ from sqlalchemy import String, ForeignKey
 from app.database.base import Base
 from app.models.materia import Materia
 from app.models.materialEnsino import MaterialEnsino
+from app.models.questao import Questao
 
 class Conteudo(Base):
     __tablename__ = "conteudo"
@@ -16,4 +17,6 @@ class Conteudo(Base):
     materiais: Mapped[list["MaterialEnsino"]] = relationship(
         back_populates= "conteudo"
     )
-    
+    questoes: Mapped[list["Questao"]] = relationship(
+        back_populates= "conteudo"
+    )

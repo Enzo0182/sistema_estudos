@@ -2,6 +2,8 @@ from sqlalchemy.orm import Mapped, mapped_column,relationship
 from sqlalchemy import String
 from app.database.base import Base
 from app.models.conteudo import Conteudo
+from app.models.rotina_materia import Rotina_Materia
+
 
 
 class Materia(Base):
@@ -11,5 +13,9 @@ class Materia(Base):
     nome: Mapped[str] = mapped_column(String(50))
     descricao: Mapped[str] = mapped_column(String(200))
     conteudos: Mapped[list["Conteudo"]] = relationship(
-        back_populates="materias"
+        back_populates="materia"
     )
+    rotinas_associadas: Mapped[list["Rotina_Materia"]] = relationship(
+     back_populates= "materia"
+    )
+    

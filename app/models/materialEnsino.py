@@ -26,10 +26,6 @@ class MaterialEnsino(Base):
         ForeignKey("conteudo.id")
     )
 
-    id_aluno: Mapped[int] = mapped_column(
-        ForeignKey("aluno.id")
-    )
-
     status: Mapped[StatusMaterial] = mapped_column(
         SQLEnum(StatusMaterial),
         default=StatusMaterial.PENDENTE
@@ -39,3 +35,4 @@ class MaterialEnsino(Base):
     conteudo: Mapped["Conteudo"] = relationship(
         back_populates= "materiais"
     )
+    

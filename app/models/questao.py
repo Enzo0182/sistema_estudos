@@ -1,8 +1,10 @@
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String, ForeignKey
 from app.database.base import Base
+from app.models.conteudo import Conteudo
+from app.models.teste_questao import Teste_Questao
 
-class questao(Base):
+class Questao(Base):
     __tablename__ = "questao"
     
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -13,3 +15,11 @@ class questao(Base):
     alternativa_d: Mapped[str] = mapped_column(String(250))
     gabarito: Mapped[str] = mapped_column(String(20))
     id_conteudo: Mapped[int] = mapped_column(ForeignKey("conteudo.id"))
+    testes_associados:Mapped[list["Teste_Questao"]] = relationship(
+        back_populates= "questao"
+    )
+    conteudo:Mapped["Conteudo"] = relationship(
+        back_populates= "questoes"
+    )
+    
+    

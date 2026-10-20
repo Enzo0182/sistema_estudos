@@ -2,6 +2,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import ForeignKey
 from app.database.base import Base
 from app.models.rotina import Rotina
+from app.models.materia import Materia
 
 class Rotina_Materia(Base):
     __tablename__ = "rotina_materia"
@@ -11,4 +12,8 @@ class Rotina_Materia(Base):
     rotina: Mapped["Rotina"] = relationship(
         back_populates= "materias_associadas"
     )
+    materia: Mapped["Materia"] = relationship(
+        back_populates= "rotinas_associadas"
+    )
+    
     
